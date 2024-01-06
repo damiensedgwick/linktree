@@ -60,9 +60,9 @@
 	}
 </script>
 
-<main class="max-w-xl mx-auto">
+<main class="max-w-xl mx-auto w-80 space-y-4 pt-8">
 	{#if $userData?.username == $page.params.username}
-		<h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">Edit your Profile</h1>
+		<h1 class="mx-2 text-2xl font-bold text-center">Edit your Profile</h1>
 
 		<SortableList list={$userData?.links} on:sort={sortList} let:item let:index>
 			<div class="group relative">
@@ -111,13 +111,10 @@
 				<button disabled={!formIsValid} type="submit" class="btn btn-success block">Add Link</button
 				>
 
-				<button type="button" class="btn btn-xs my-4" on:click={cancelLink}>Cancel</button>
+				<button type="button" class="btn btn-xs" on:click={cancelLink}>Cancel</button>
 			</form>
 		{:else}
-			<button
-				on:click={() => (showForm = true)}
-				class="btn btn-outline btn-info block mx-auto my-4"
-			>
+			<button on:click={() => (showForm = true)} class="btn btn-outline btn-ghost block w-full">
 				Add a Link
 			</button>
 		{/if}

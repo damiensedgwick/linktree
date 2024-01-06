@@ -14,7 +14,10 @@
 				<h1 class="text-7xl font-bold">Linktree</h1>
 				<p class="py-6 text-2xl">One simple link to share your entire developer portfolio</p>
 				{#if $userData?.username}
-					<a href="/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a>
+					<div class="space-x-4">
+						<a href="/{$userData.username}" class="btn btn-neutral w-40">View Profile</a>
+						<a href="/{$userData.username}/edit" class="btn btn-accent w-40">Edit Profile</a>
+					</div>
 				{:else}
 					<a href="/login" class="btn btn-primary">Get Started</a>
 				{/if}
